@@ -1,0 +1,12 @@
+name: Pull Origin Branch
+on:
+  pull_request:
+    paths:
+      - '**.py'
+jobs:
+  if_merged:
+    if: github.event.pull_request.merged == true
+    runs-on: self-hosted
+    steps:
+    - run: |
+        echo The Origin Branch was merged
